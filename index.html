@@ -170,7 +170,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a0f08;font-family:
 /* Completion overlay */
 .completion-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.7);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:20;opacity:0;transition:opacity 0.5s;pointer-events:none;}
 .completion-overlay.show{opacity:1;pointer-events:auto;}
-.completion-text{color:#FFE066;font-size:20px;font-weight:900;text-shadow:0 3px 8px rgba(0,0,0,0.5);animation:popScale 0.5s ease-out;padding:0 16px;text-align:center;}
+.completion-text{color:#FFE066;font-size:20px;font-weight:900;text-shadow:0 3px 8px rgba(0,0,0,0.5);animation:popScale 0.5s ease-out;padding:0 16px;text-align:center;width:100%;}
 @keyframes popScale{0%{transform:scale(0);}70%{transform:scale(1.15);}100%{transform:scale(1);}}
 
 /* ======= CTA SCENE ======= */
@@ -205,7 +205,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a0f08;font-family:
 .cta-puzzle-frame{width:75%;max-width:280px;margin-bottom:16px;border-radius:12px;border:3px solid #FFD700;box-shadow:0 0 24px rgba(255,215,0,0.4),0 0 60px rgba(255,215,0,0.15);overflow:hidden;animation:ctaImgGlow 2s ease-in-out infinite;}
 @keyframes ctaImgGlow{0%,100%{box-shadow:0 0 24px rgba(255,215,0,0.4),0 0 60px rgba(255,215,0,0.15);}50%{box-shadow:0 0 30px rgba(255,215,0,0.6),0 0 80px rgba(255,215,0,0.25);}}
 .cta-puzzle-frame img{width:100%;display:block;}
-.cta-title{color:#FFE066;font-size:22px;font-weight:900;margin-bottom:6px;text-shadow:0 3px 8px rgba(0,0,0,0.5),0 0 30px rgba(255,215,0,0.3);animation:ctaPulse 2s ease-in-out infinite;text-align:center;}
+.cta-title{color:#FFE066;font-size:22px;font-weight:900;margin-bottom:6px;text-shadow:0 3px 8px rgba(0,0,0,0.5),0 0 30px rgba(255,215,0,0.3);animation:ctaPulse 2s ease-in-out infinite;text-align:center;width:100%;}
 @keyframes ctaPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.03);}}
 .cta-sub{color:rgba(255,255,255,0.9);font-size:15px;margin-bottom:28px;text-shadow:0 2px 4px rgba(0,0,0,0.5);}
 .cta-btn{display:block;width:80%;max-width:280px;padding:16px 20px;background:linear-gradient(135deg,#FF6B35,#FF4500,#E53935);color:#fff;font-size:19px;font-weight:800;text-align:center;text-decoration:none;border-radius:30px;box-shadow:0 4px 20px rgba(255,69,0,0.5);animation:ctaBtnPulse 1.5s ease-in-out infinite;}
@@ -271,7 +271,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#1a0f08;font-family:
     </div>
     <div class="cta-content">
       <div class="cta-puzzle-frame" id="cta-puzzle-img"></div>
-      <div class="cta-title">✨ ディズニーの仲間たちがあなたを待ってる！ ✨</div>
+      <div class="cta-title">✨ ディズニーの仲間たちが<br>あなたを待ってる！ ✨</div>
       <div class="cta-sub">夢の時間をソリティアで</div>
       <a class="cta-btn" id="cta-btn" href="#">ミッキーたちに会いにいく</a>
       <div class="cta-store"><div class="cta-store-icon">🍎</div>App Storeで無料</div>
@@ -688,7 +688,7 @@ function showCompletion() {
 
   setTimeout(() => {
     const overlay = document.getElementById('completion');
-    overlay.innerHTML = '<div class="completion-text">✨ ディズニーの仲間たちがあなたを待ってる！ ✨</div>';
+    overlay.innerHTML = '<div class="completion-text">✨ ディズニーの仲間たちが<br>あなたを待ってる！ ✨</div>';
     overlay.classList.add('show');
     setTimeout(transitionToCTA, 1500);
   }, 300);
